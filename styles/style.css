@@ -1,28 +1,59 @@
-#menuInd {
+.bodyInd {
+    font-family: 'Helvetica', sans-serif;
+    background: linear-gradient(to right, red, blue);
+}
+
+.bodyAbout {
+    font-family: 'Helvetica', sans-serif;
+    background: linear-gradient(to right, white, grey);
+}
+
+.bodyStuff {
+    font-family: 'Helvetica', sans-serif;
+    background: linear-gradient(to right, white, lightblue);
+}
+
+.tituloInd {
+    -webkit-text-stroke: 1px white;
     text-align: center;
 }
 
-#tituloInd {
+.tituloAbo {
     text-align: center;
 }
 
-#menuAbo {
+.contentAbo {
     text-align: center;
 }
 
-#tituloAbo {
-    text-align: center;
-}
-
-#contentAbo {
-    text-align: center;
-}
-
-#menuPro {
-    text-align: center;
-}
-
-#vinylPro {
+.vinylPro {
     display: flex;
     text-align: center;
+}
+
+.box {
+    width: 210px;
+    height: 45px;
+    padding: 10px;
+    border: 2px solid #007bff;
+    margin: auto;
+    background-color: #f7f7f7;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.container {
+    width: 300px;
+    height: 200px;
+    background-color: #f7f7f7;
+    position: relative;
+}
+
+.absolute-box {
+    width: 100px;
+    height: 100px;
+    background-color: #007bff;
+    position: absolute;
+    top: 50px;
+    left: 50px;
 }
