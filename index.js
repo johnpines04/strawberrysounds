@@ -2,32 +2,39 @@ function register() {
     //variáveis que salvam o prompt do HTML
     const email = document.getElementById('register-email').value;
     const senha = document.getElementById('register-senha').value;
+    const nome = document.getElementById('register-nome').value;
 
     //recuperam os dados de cadastro do localStorage
     const users = JSON.parse(localStorage.getItem('users')) || [];
 
     //registra o email e a senha no nosso banco de dados local
-    users.push({email, senha});
+    if (nome != "" && email != "" && senha != "") {
+        users.push({ nome, email, senha });
+        localStorage.setItem('users', JSON.stringify(users));
 
-    //salva a lista atualizada de usuários no localStorage
-    localStorage.setItem('users', JSON.stringify(users));
-
-    document.getElementById('result').innerHTML = 'Cadastro bem-sucedido';
+        //salva a lista atualizada de usuários no localStorage
+        document.getElementById('result').innerHTML = 'Cadastro bem-sucedido';
+    } else {
+        document.getElementById('result').innerHTML = 'Cadastro mal-sucedido, algo está faltando';
+    }
 }
 
 function login() {
-    //variáveis que salvam o prompt do HTML
     const email = document.getElementById('login-email').value;
     const senha = document.getElementById('login-senha').value;
 
     const users = JSON.parse(localStorage.getItem('users')) || [];
 
     //verifica se o email e senha corresponde a um usuário existente
-    const user = users.find(u => u.email === email && u.senha === senha);
+    const user = users.find(u => u.email === email && u.email != "" && u.senha === senha && u.senha != "");
 
-    if(user){
+    if (user) {
         document.getElementById('result').innerHTML = 'Login bem-sucedido';
-    }else{
+        localStorage.setItem(email, senha);
+        window.location.href = "./index.html";
+        return true
+    } else {
         document.getElementById('result').innerHTML = 'Login falhou';
+        return false
     }
 }

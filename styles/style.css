@@ -1,3 +1,13 @@
+.bodyReg {
+    font-family: 'Helvetica', sans-serif;
+    background: linear-gradient(to right, rgb(0, 225, 255), rgb(0, 89, 255));
+}
+
+.bodyLog {
+    font-family: 'Helvetica', sans-serif;
+    background: linear-gradient(to right, rgb(0, 255, 13), rgb(0, 255, 85));
+}
+
 .bodyInd {
     font-family: 'Helvetica', sans-serif;
     background: linear-gradient(to right, red, blue);
@@ -31,8 +41,16 @@
     text-align: center;
 }
 
+.register {
+    text-align: center;
+}
+
+.login {
+    text-align: center;
+}
+
 .box {
-    width: 210px;
+    width: 350px;
     height: 45px;
     padding: 10px;
     border: 2px solid #007bff;
